@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astro Meter</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">Astro Meter</div>
+        <nav class="main-nav" id="planet-navigation">
+            </nav>
+    </header>
+
+    <main id="planet-details-container">
+        <section id="intro-section" class="planet-section active">
+            <h2>Welcome to Astro Meter!</h2>
+            <p>Explore a selection of planets and exoplanets. Discover their estimated distances from their star and some key characteristics.</p>
+            <p>Current Local Date & Time: <span id="current-datetime"></span></p>
+            <p>Select a celestial body from the navigation above to begin your cosmic journey!</p>
+        </section>
+
+        <section id="mercury" class="planet-section">
+            <h2 class="planet-name">Mercury</h2>
+            <div class="planet-info">
+                <p><strong>Type:</strong> Terrestrial Planet</p>
+                <p><strong>Distance from Star:</strong> <span class="distance-star">57.9 million km (0.39 AU) from Sun</span></p>
+                <h3>Characteristics:</h3>
+                <ul>
+                    <li>Smallest and innermost planet.</li>
+                    <li>Extremely thin exosphere, no true atmosphere.</li>
+                    <li>Experiences extreme temperature swings (-173°C to 427°C).</li>
+                    <li>Heavily cratered surface, similar to Earth's Moon.</li>
+                    <li>No known natural satellites.</li>
+                </ul>
+                <p class="data-last-updated"><em>(Data updated as of: <span class="dynamic-update-time"></span>)</em></p>
+            </div>
+        </section>
+
+        <section id="venus" class="planet-section">
+            <h2 class="planet-name">Venus</h2>
+            <div class="planet-info">
+                <p><strong>Type:</strong> Terrestrial Planet</p>
+                <p><strong>Distance from Star:</strong> <span class="distance-star">108.2 million km (0.72 AU) from Sun</span></p>
+                <h3>Characteristics:</h3>
+                <ul>
+                    <li>Second planet from the Sun, often called Earth's 'sister planet'.</li>
+                    <li>Thick, toxic atmosphere of sulfuric acid clouds.</li>
+                    <li>Hottest planet in the Solar System (~462°C) due to runaway greenhouse effect.</li>
+                    <li>Rotates in the opposite direction to most planets (retrograde rotation).</li>
+                    <li>No known natural satellites.</li>
+                </ul>
+                <p class="data-last-updated"><em>(Data updated as of: <span class="dynamic-update-time"></span>)</em></p>
+            </div>
+        </section>
+
+        <section id="earth" class="planet-section">
+            <h2 class="planet-name">Earth</h2>
+            <div class="planet-info">
+                <p><strong>Type:</strong> Terrestrial Planet</p>
+                <p><strong>Distance from Star:</strong> <span class="distance-star">149.6 million km (1 AU) from Sun</span></p>
+                <h3>Characteristics:</h3>
+                <ul>
+                    <li>The only planet known to harbor life.</li>
+                    <li>Atmosphere rich in nitrogen and oxygen.</li>
+                    <li>About 71% of its surface is covered by liquid water.</li>
+                    <li>Has one natural satellite: the Moon.</li>
+                    <li>Magnetic field protects from solar wind.</li>
+                </ul>
+                <p class="data-last-updated"><em>(Data updated as of: <span class="dynamic-update-time"></span>)</em></p>
+            </div>
+        </section>
+
+        <section id="mars" class="planet-section">
+            <h2 class="planet-name">Mars</h2>
+            <div class="planet-info">
+                <p><strong>Type:</strong> Terrestrial Planet</p>
+                <p><strong>Distance from Star:</strong> <span class="distance-star">227.9 million km (1.52 AU) from Sun</span></p>
+                <h3>Characteristics:</h3>
+                <ul>
+                    <li>The 'Red Planet' due to iron oxide on its surface.</li>
+                    <li>Thin atmosphere, mostly carbon dioxide.</li>
+                    <li>Features polar ice caps, volcanoes, and canyons.</li>
+                    <li>Has two small moons: Phobos and Deimos.</li>
+                    <li>Evidence suggests presence of liquid water in the distant past.</li>
+                </ul>
+                <p class="data-last-updated"><em>(Data updated as of: <span class="dynamic-update-time"></span>)</em></p>
+            </div>
+        </section>
+
+        <section id="jupiter" class="planet-section">
+            <h2 class="planet-name">Jupiter</h2>
+            <div class="planet-info">
+                <p><strong>Type:</strong> Gas Giant</p>
+                <p><strong>Distance from Star:</strong> <span class="distance-star">778.5 million km (5.20 AU) from Sun</span></p>
+                <h3>Characteristics:</h3>
+                <ul>
+                    <li>Largest planet in our Solar System.</li>
+                    <li>Known for its Great Red Spot, a persistent storm larger than Earth.</li>
+                    <li>Composed mainly of hydrogen and helium.</li>
+                    <li>Has a powerful magnetic field.</li>
+                    <li>Possesses a faint ring system and 95 known moons.</li>
+                </ul>
+                <p class="data-last-updated"><em>(Data updated as of: <span class="dynamic-update-time"></span>)</em></p>
+            </div>
+        </section>
+
+        <section id="saturn" class="planet-section">
+            <h2 class="planet-name">Saturn</h2>
+            <div class="planet-info">
+                <p><strong>Type:</strong> Gas Giant</p>
+                <p><strong>Distance from Star:</strong> <span class="distance-star">1.434 billion km (9.58 AU) from Sun</span></p>
+                <h3>Characteristics:</h3>
+                <ul>
+                    <li>Famous for its prominent, complex ring system.</li>
+                    <li>Second largest planet in the Solar System.</li>
+                    <li>Lower density than water, it would float if placed in a large enough ocean.</li>
+                    <li>Has 146 known moons, including the large moon Titan with a thick atmosphere.</li>
+                    <li>Strong winds and auroras in its polar regions.</li>
+                </ul>
+                <p class="data-last-updated"><em>(Data updated as of: <span class="dynamic-update-time"></span>)</em></p>
+            </div>
+        </section>
+
+        <section id="uranus" class="planet-section">
+            <h2 class="planet-name">Uranus</h2>
+            <div class="planet-info">
+                <p><strong>Type:</strong> Ice Giant</p>
+                <p><strong>Distance from Star:</strong> <span class="distance-star">2.871 billion km (19.23 AU) from Sun</span></p>
+                <h3>Characteristics:</h3>
+                <ul>
+                    <li>Rotates on its side, with its axis tilted almost parallel to its orbit.</li>
+                    <li>Atmosphere appears blue-green due to methane absorption.</li>
+                    <li>Has a faint ring system and 27 known moons.</li>
+                    <li>Experiences extreme seasonal variations due to its axial tilt.</li>
+                </ul>
+                <p class="data-last-updated"><em>(Data updated as of: <span class="dynamic-update-time"></span>)</em></p>
+            </div>
+        </section>
+
+        <section id="neptune" class="planet-section">
+            <h2 class="planet-name">Neptune</h2>
+            <div class="planet-info">
+                <p><strong>Type:</strong> Ice Giant</p>
+                <p><strong>Distance from Star:</strong> <span class="distance-star">4.495 billion km (30.10 AU) from Sun</span></p>
+                <h3>Characteristics:</h3>
+                <ul>
+                    <li>Farthest known planet from the Sun.</li>
+                    <li>Known for the fastest winds in the Solar System.</li>
+                    <li>Has dynamic storm systems, though less persistent than Jupiter's.</li>
+                    <li>Has 14 known moons, including Triton which orbits in a retrograde direction.</li>
+                    <li>Deep blue color, likely due to methane and other unknown constituents.</li>
+                </ul>
+                <p class="data-last-updated"><em>(Data updated as of: <span class="dynamic-update-time"></span>)</em></p>
+            </div>
+        </section>
+
+        <section id="proxima_b" class="planet-section">
+            <h2 class="planet-name">Proxima Centauri b</h2>
+            <div class="planet-info">
+                <p><strong>Type:</strong> Terrestrial Exoplanet (Super-Earth)</p>
+                <p><strong>Distance from Star:</strong> <span class="distance-star">7.5 million km (0.05 AU) from Proxima Centauri</span></p>
+                <h3>Characteristics:</h3>
+                <ul>
+                    <li>Orbits Proxima Centauri, the closest star to our Sun.</li>
+                    <li>Potentially habitable, lying within its star's habitable zone.</li>
+                    <li>Believed to be tidally locked, with one side always facing its star.</li>
+                    <li>Mass is at least 1.17 times that of Earth.</li>
+                </ul>
+                <p class="data-last-updated"><em>(Data updated as of: <span class="dynamic-update-time"></span>)</em></p>
+            </div>
+        </section>
+
+        <section id="trappist_1e" class="planet-section">
+            <h2 class="planet-name">TRAPPIST-1e</h2>
+            <div class="planet-info">
+                <p><strong>Type:</strong> Terrestrial Exoplanet</p>
+                <p><strong>Distance from Star:</strong> <span class="distance-star">4.2 million km (0.028 AU) from TRAPPIST-1</span></p>
+                <h3>Characteristics:</h3>
+                <ul>
+                    <li>One of seven Earth-sized planets in the TRAPPIST-1 system.</li>
+                    <li>Located in the habitable zone, potentially capable of supporting liquid water.</li>
+                    <li>Likely tidally locked to its ultra-cool dwarf star.</li>
+                    <li>Part of a fascinating system with planets very close to each other.</li>
+                </ul>
+                <p class="data-last-updated"><em>(Data updated as of: <span class="dynamic-update-time"></span>)</em></p>
+            </div>
+        </section>
+
+        <section id="kepler_186f" class="planet-section">
+            <h2 class="planet-name">Kepler-186f</h2>
+            <div class="planet-info">
+                <p><strong>Type:</strong> Terrestrial Exoplanet</p>
+                <p><strong>Distance from Star:</strong> <span class="distance-star">52.4 million km (0.35 AU) from Kepler-186</span></p>
+                <h3>Characteristics:</h3>
+                <ul>
+                    <li>First Earth-size planet discovered in the habitable zone of another star.</li>
+                    <li>Orbits a red dwarf star, slightly cooler and smaller than our Sun.</li>
+                    <li>Its size is estimated to be only 10% larger than Earth.</li>
+                    <li>Could potentially have liquid water on its surface.</li>
+                </ul>
+                <p class="data-last-updated"><em>(Data updated as of: <span class="dynamic-update-time"></span>)</em></p>
+            </div>
+        </section>
+
+        <section id="hd_209458b" class="planet-section">
+            <h2 class="planet-name">HD 209458 b</h2>
+            <div class="planet-info">
+                <p><strong>Type:</strong> Gas Giant Exoplanet ('Hot Jupiter')</p>
+                <p><strong>Distance from Star:</strong> <span class="distance-star">7 million km (0.047 AU) from HD 209458</span></p>
+                <h3>Characteristics:</h3>
+                <ul>
+                    <li>First exoplanet discovered to transit its star, allowing atmospheric studies.</li>
+                    <li>A 'Hot Jupiter' due to its large size and extremely close orbit.</li>
+                    <li>Its atmosphere shows evidence of water vapor, sodium, and carbon monoxide.</li>
+                    <li>Experiences extreme temperatures and strong winds.</li>
+                </ul>
+                <p class="data-last-updated"><em>(Data updated as of: <span class="dynamic-update-time"></span>)</em></p>
+            </div>
+        </section>
+
+        <section id="wasp_12b" class="planet-section">
+            <h2 class="planet-name">WASP-12b</h2>
+            <div class="planet-info">
+                <p><strong>Type:</strong> Gas Giant Exoplanet ('Hot Jupiter')</p>
+                <p><strong>Distance from Star:</strong> <span class="distance-star">3.4 million km (0.023 AU) from WASP-12</span></p>
+                <h3>Characteristics:</h3>
+                <ul>
+                    <li>One of the hottest and fastest-orbiting exoplanets known.</li>
+                    <li>So close to its star that it's being tidally stretched into an egg shape.</li>
+                    <li>Losing its atmosphere to its star at a rapid rate.</li>
+                    <li>Atmosphere contains significant amounts of carbon.</li>
+                </ul>
+                <p class="data-last-updated"><em>(Data updated as of: <span class="dynamic-update-time"></span>)</em></p>
+            </div>
+        </section>
+
+        <section id="gj_504b" class="planet-section">
+            <h2 class="planet-name">Gliese 504 b</h2>
+            <div class="planet-info">
+                <p><strong>Type:</strong> Gas Giant Exoplanet (Super-Jupiter)</p>
+                <p><strong>Distance from Star:</strong> <span class="distance-star">7.3 billion km (43.5 AU) from Gliese 504</span></p>
+                <h3>Characteristics:</h3>
+                <ul>
+                    <li>One of the lowest-mass exoplanets ever directly imaged.</li>
+                    <li>Has a distinct magenta color, possibly due to atmospheric composition.</li>
+                    <li>Orbits a relatively young star.</li>
+                    <li>Considered a 'super-Jupiter' due to its large size.</li>
+                </ul>
+                <p class="data-last-updated"><em>(Data updated as of: <span class="dynamic-update-time"></span>)</em></p>
+            </div>
+        </section>
+
+        <section id="hr_8799e" class="planet-section">
+            <h2 class="planet-name">HR 8799 e</h2>
+            <div class="planet-info">
+                <p><strong>Type:</strong> Gas Giant Exoplanet</p>
+                <p><strong>Distance from Star:</strong> <span class="distance-star">2.2 billion km (14.5 AU) from HR 8799</span></p>
+                <h3>Characteristics:</h3>
+                <ul>
+                    <li>One of four large exoplanets directly imaged orbiting the star HR 8799.</li>
+                    <li>Still very young and hot, radiating heat from its formation.</li>
+                    <li>Its atmosphere contains methane and carbon monoxide.</li>
+                    <li>Provides a unique opportunity to study planetary formation.</li>
+                </ul>
+                <p class="data-last-updated"><em>(Data updated as of: <span class="dynamic-update-time"></span>)</em></p>
+            </div>
+        </section>
+
+        <section id="corot_7b" class="planet-section">
+            <h2 class="planet-name">CoRoT-7b</h2>
+            <div class="planet-info">
+                <p><strong>Type:</strong> Terrestrial Exoplanet (Super-Earth)</p>
+                <p><strong>Distance from Star:</strong> <span class="distance-star">2.5 million km (0.017 AU) from CoRoT-7</span></p>
+                <h3>Characteristics:</h3>
+                <ul>
+                    <li>First rocky exoplanet discovered outside our solar system.</li>
+                    <li>Extremely close to its star, resulting in scorching temperatures (up to 2,500°C).</li>
+                    <li>May have 'rain' of vaporized rock that condenses at higher altitudes.</li>
+                    <li>Likely tidally locked, with a permanent day and night side.</li>
+                </ul>
+                <p class="data-last-updated"><em>(Data updated as of: <span class="dynamic-update-time"></span>)</em></p>
+            </div>
+        </section>
+
+        <section id="k2_18b" class="planet-section">
+            <h2 class="planet-name">K2-18b</h2>
+            <div class="planet-info">
+                <p><strong>Type:</strong> Mini-Neptune Exoplanet</p>
+                <p><strong>Distance from Star:</strong> <span class="distance-star">22 million km (0.14 AU) from K2-18</span></p>
+                <h3>Characteristics:</h3>
+                <ul>
+                    <li>Potentially contains liquid water clouds and rain.</li>
+                    <li>Considered a 'sub-Neptune' or 'mini-Neptune' with a significant atmosphere.</li>
+                    <li>Orbits a red dwarf star in its habitable zone.</li>
+                    <li>Initial observations suggest water vapor in its atmosphere.</li>
+                </ul>
+                <p class="data-last-updated"><em>(Data updated as of: <span class="dynamic-update-time"></span>)</em></p>
+            </div>
+        </section>
+
+        <section id="tess_164b" class="planet-section">
+            <h2 class="planet-name">TOI-164b</h2>
+            <div class="planet-info">
+                <p><strong>Type:</strong> Gas Giant Exoplanet (Hot Jupiter)</p>
+                <p><strong>Distance from Star:</strong> <span class="distance-star">10.5 million km (0.07 AU) from TOI-164</span></p>
+                <h3>Characteristics:</h3>
+                <ul>
+                    <li>A relatively recently discovered 'Hot Jupiter'.</li>
+                    <li>Its discovery highlights the power of the TESS mission in finding transiting exoplanets.</li>
+                    <li>Typical of this class, with a short orbital period and high temperatures.</li>
+                </ul>
+                <p class="data-last-updated"><em>(Data updated as of: <span class="dynamic-update-time"></span>)</em></p>
+            </div>
+        </section>
+
+        <section id="51_pegasi_b" class="planet-section">
+            <h2 class="planet-name">51 Pegasi b</h2>
+            <div class="planet-info">
+                <p><strong>Type:</strong> Gas Giant Exoplanet ('Hot Jupiter')</p>
+                <p><strong>Distance from Star:</strong> <span class="distance-star">7.8 million km (0.05 AU) from 51 Pegasi</span></p>
+                <h3>Characteristics:</h3>
+                <ul>
+                    <li>The first exoplanet discovered orbiting a sun-like star (in 1995).</li>
+                    <li>Revolutionized our understanding of planetary systems.</li>
+                    <li>A 'Hot Jupiter' that challenges previous theories of planet formation.</li>
+                    <li>Demonstrated that giant planets can exist in very close orbits.</li>
+                </ul>
+                <p class="data-last-updated"><em>(Data updated as of: <span class="dynamic-update-time"></span>)</em></p>
+            </div>
+        </section>
+
+        <section id="gliese_581g" class="planet-section">
+            <h2 class="planet-name">Gliese 581 g</h2>
+            <div class="planet-info">
+                <p><strong>Type:</strong> Terrestrial Exoplanet (Super-Earth)</p>
+                <p><strong>Distance from Star:</strong> <span class="distance-star">22 million km (0.14 AU) from Gliese 581</span></p>
+                <h3>Characteristics:</h3>
+                <ul>
+                    <li>Considered a strong candidate for habitability (though its existence is debated).</li>
+                    <li>If it exists, it would orbit a red dwarf star in its habitable zone.</li>
+                    <li>Estimated to be 3-4 times the mass of Earth.</li>
+                    <li>Its discovery spurred significant interest in finding habitable worlds.</li>
+                </ul>
+                <p class="data-last-updated"><em>(Data updated as of: <span class="dynamic-update-time"></span>)</em></p>
+            </div>
+        </section>
+
+        <section id="hd_189733b" class="planet-section">
+            <h2 class="planet-name">HD 189733 b</h2>
+            <div class="planet-info">
+                <p><strong>Type:</strong> Gas Giant Exoplanet ('Hot Jupiter')</p>
+                <p><strong>Distance from Star:</strong> <span class="distance-star">4.8 million km (0.031 AU) from HD 189733</span></p>
+                <h3>Characteristics:</h3>
+                <ul>
+                    <li>Known for its deep blue color, likely due to silicate particles in its atmosphere.</li>
+                    <li>Experiences supersonic winds, reaching up to 8,700 km/h.</li>
+                    <li>Has a very hot atmosphere, with temperatures around 1,000°C.</li>
+                    <li>Frequently observed for atmospheric studies due to its transiting nature.</li>
+                </ul>
+                <p class="data-last-updated"><em>(Data updated as of: <span class="dynamic-update-time"></span>)</em></p>
+            </div>
+        </section>
+
+        <section id="g_94c" class="planet-section">
+            <h2 class="planet-name">G 9-40 c</h2>
+            <div class="planet-info">
+                <p><strong>Type:</strong> Super-Earth/Mini-Neptune Exoplanet</p>
+                <p><strong>Distance from Star:</strong> <span class="distance-star">7.5 million km (0.05 AU) from G 9-40</span></p>
+                <h3>Characteristics:</h3>
+                <ul>
+                    <li>One of the first multi-planet systems found by the TESS mission.</li>
+                    <li>This system has two planets, with 'c' being the outer one.</li>
+                    <li>Offers insights into the formation and evolution of multi-planet systems around M-dwarfs.</li>
+                </ul>
+                <p class="data-last-updated"><em>(Data updated as of: <span class="dynamic-update-time"></span>)</em></p>
+            </div>
+        </section>
+
+        <section id="lp_890_9b" class="planet-section">
+            <h2 class="planet-name">LP 890-9 b</h2>
+            <div class="planet-info">
+                <p><strong>Type:</strong> Terrestrial Exoplanet (Super-Earth)</p>
+                <p><strong>Distance from Star:</strong> <span class="distance-star">3.7 million km (0.025 AU) from LP 890-9</span></p>
+                <h3>Characteristics:</h3>
+                <ul>
+                    <li>Part of a two-planet system discovered around a cool star.</li>
+                    <li>Likely a rocky planet, slightly larger than Earth.</li>
+                    <li>Could potentially have an atmosphere, given its size and distance from its star.</li>
+                </ul>
+                <p class="data-last-updated"><em>(Data updated as of: <span class="dynamic-update-time"></span>)</em></p>
+            </div>
+        </section>
+
+        <section id="l_98_59b" class="planet-section">
+            <h2 class="planet-name">L 98-59 b</h2>
+            <div class="planet-info">
+                <p><strong>Type:</strong> Terrestrial Exoplanet (Super-Earth)</p>
+                <p><strong>Distance from Star:</strong> <span class="distance-star">2.5 million km (0.017 AU) from L 98-59</span></p>
+                <h3>Characteristics:</h3>
+                <ul>
+                    <li>One of the smallest and closest exoplanets to Earth with confirmed mass.</li>
+                    <li>Part of a system with at least four planets.</li>
+                    <li>Provides an excellent target for future atmospheric characterization studies.</li>
+                    <li>Likely tidally locked due to its very close orbit.</li>
+                </ul>
+                <p class="data-last-updated"><em>(Data updated as of: <span class="dynamic-update-time"></span>)</em></p>
+            </div>
+        </section>
+
+        <section id="toi_700d" class="planet-section">
+            <h2 class="planet-name">TOI 700 d</h2>
+            <div class="planet-info">
+                <p><strong>Type:</strong> Terrestrial Exoplanet</p>
+                <p><strong>Distance from Star:</strong> <span class="distance-star">27 million km (0.16 AU) from TOI 700</span></p>
+                <h3>Characteristics:</h3>
+                <ul>
+                    <li>Earth-sized exoplanet orbiting within the habitable zone of its star.</li>
+                    <li>Discovered by NASA's TESS mission.</li>
+                    <li>Its star, TOI 700, is a small, cool M-dwarf star.</li>
+                    <li>Considered a strong candidate for follow-up studies to search for biosignatures.</li>
+                </ul>
+                <p class="data-last-updated"><em>(Data updated as of: <span class="dynamic-update-time"></span>)</em></p>
+            </div>
+        </section>
+
+        <section id="kelt_9b" class="planet-section">
+            <h2 class="planet-name">KELT-9b</h2>
+            <div class="planet-info">
+                <p><strong>Type:</strong> Ultra-Hot Jupiter Exoplanet</p>
+                <p><strong>Distance from Star:</strong> <span class="distance-star">5.1 million km (0.034 AU) from KELT-9</span></p>
+                <h3>Characteristics:</h3>
+                <ul>
+                    <li>The hottest known exoplanet, with a dayside temperature over 4,300°C.</li>
+                    <li>Hotter than some stars, its atmosphere is being vaporized.</li>
+                    <li>Orbits a very hot, massive star.</li>
+                    <li>Its atmosphere contains exotic gases like atomic hydrogen.</li>
+                </ul>
+                <p class="data-last-updated"><em>(Data updated as of: <span class="dynamic-update-time"></span>)</em></p>
+            </div>
+        </section>
+
+        <section id="vhs_1256b" class="planet-section">
+            <h2 class="planet-name">VHS 1256 b</h2>
+            <div class="planet-info">
+                <p><strong>Type:</strong> Brown Dwarf/Sub-Brown Dwarf</p>
+                <p><strong>Distance from Star:</strong> <span class="distance-star">12 billion km (80 AU) from VHS 1256</span></p>
+                <h3>Characteristics:</h3>
+                <ul>
+                    <li>Not a planet in the traditional sense, but a 'planetary mass object' or brown dwarf.</li>
+                    <li>Known for its highly dynamic and stormy atmosphere with silicate clouds.</li>
+                    <li>Directly imaged, allowing detailed study of its atmosphere.</li>
+                    <li>Exhibits significant brightness variations due to its weather patterns.</li>
+                </ul>
+                <p class="data-last-updated"><em>(Data updated as of: <span class="dynamic-update-time"></span>)</em></p>
+            </div>
+        </section>
+
+        <section id="wasp_39b" class="planet-section">
+            <h2 class="planet-name">WASP-39b</h2>
+            <div class="planet-info">
+                <p><strong>Type:</strong> Gas Giant Exoplanet (Hot Saturn)</p>
+                <p><strong>Distance from Star:</strong> <span class="distance-star">6.8 million km (0.045 AU) from WASP-39</span></p>
+                <h3>Characteristics:</h3>
+                <ul>
+                    <li>Known for being the first exoplanet with definitive evidence of carbon dioxide in its atmosphere (detected by JWST).</li>
+                    <li>A 'Hot Saturn' - a gas giant with a density similar to Saturn but much closer to its star.</li>
+                    <li>Puffy atmosphere, making it an excellent target for atmospheric characterization.</li>
+                    <li>Highlights the power of new telescopes in understanding exoplanet atmospheres.</li>
+                </ul>
+                <p class="data-last-updated"><em>(Data updated as of: <span class="dynamic-update-time"></span>)</em></p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Astro Meter. All rights reserved. Data is for illustrative purposes and updated periodically.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+/* General Body Styles */
+body {
+    font-family: 'Roboto', sans-serif; /* A modern, clean font */
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0a0a20, #000000); /* Deep space background */
+    color: #e0e0e0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Header & Logo */
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    border-bottom: 2px solid #00ffff; /* Cyber blue accent */
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif; /* Futuristic font for the logo */
+    font-size: 3.2em;
+    font-weight: bold;
+    color: #00ffff; /* Bright aqua */
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+    margin-bottom: 25px;
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, #00ffff, #8a2be2, #00ffff); /* Gradient for a cool effect */
+    -webkit-background-clip: text; /* For gradient text effect */
+    -webkit-text-fill-color: transparent; /* For gradient text effect */
+    display: inline-block; /* Essential for background-clip to work */
+    cursor: pointer; /* Indicate it's clickable */
+    transition: transform 0.2s ease;
+}
+
+.logo:hover {
+    transform: scale(1.02);
+}
+
+/* Navigation */
+.main-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px; /* Space between planet items */
+    padding: 15px 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.planet-nav-item {
+    display: flex; /* Make it a flex container */
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+
+    min-width: 100px;
+    padding: 10px; /* Adjust padding for image */
+    background: linear-gradient(45deg, #1f004d, #4d0099); /* Darker purple gradient */
+    color: #fff;
+    border-radius: 12px; /* More rounded to frame image */
+    font-size: 0.9em; /* Smaller font for name */
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    user-select: none;
+    text-align: center;
+}
+
+.planet-nav-item img {
+    width: 60px; /* Fixed width for images */
+    height: 60px; /* Fixed height for images */
+    border-radius: 50%; /* Make images circular */
+    object-fit: cover; /* Ensure image covers the area without distortion */
+    margin-bottom: 8px; /* Space between image and text */
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Subtle border for images */
+    transition: border-color 0.3s ease;
+}
+
+.planet-nav-item:hover {
+    transform: translateY(-5px) scale(1.05); /* More pronounced lift on hover */
+    background: linear-gradient(45deg, #6600cc, #9900ff);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.planet-nav-item:hover img {
+    border-color: #00ffff; /* Highlight image border on hover */
+}
+
+.planet-nav-item.active-nav {
+    border: 3px solid #00ffff; /* Highlight active planet with aqua */
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 255, 255, 0.8); /* Stronger glow for active */
+    background: linear-gradient(45deg, #009999, #00cccc); /* Brighter gradient for active state */
+}
+
+.planet-nav-item.active-nav img {
+    border-color: #ffffff; /* White border for active image */
+}
+
+
+/* Main Content Area */
+main {
+    flex-grow: 1;
+    padding: 40px 20px;
+    max-width: 950px; /* Slightly wider */
+    margin: 40px auto; /* More vertical space */
+    background-color: rgba(15, 15, 30, 0.85); /* Darker, more opaque */
+    border-radius: 18px; /* More rounded */
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.6);
+    position: relative; /* For absolute positioning of sections if needed */
+    overflow: hidden; /* Ensures content respects border-radius */
+}
+
+.planet-section {
+    display: none; /* Hidden by default, JavaScript will show */
+    padding: 25px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Slower transition */
+}
+
+.planet-section.active {
+    display: block; /* Make visible */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.planet-section h2 {
+    color: #00ffff; /* Aqua color */
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 2px solid rgba(0, 255, 255, 0.4);
+    padding-bottom: 15px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.planet-info p {
+    font-size: 1.15em;
+    margin-bottom: 12px;
+}
+
+.planet-info strong {
+    color: #99ccff; /* Lighter blue for emphasis */
+}
+
+.planet-info h3 {
+    color: #aaddff;
+    margin-top: 30px;
+    margin-bottom: 12px;
+    font-size: 1.5em;
+}
+
+.planet-info ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.planet-info ul li {
+    background-color: rgba(30, 30, 60, 0.6); /* Slightly lighter background for list items */
+    margin-bottom: 10px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+    border-left: 3px solid #00ffff; /* A subtle accent line */
+}
+
+.data-last-updated {
+    font-size: 0.9em;
+    color: #aaaaaa;
+    display: block;
+    margin-top: 25px;
+    text-align: right;
+    font-style: italic;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #888;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+    font-size: 0.9em;
+    border-top: 2px solid rgba(0, 0, 0, 0.4);
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 2.5em;
+        margin-bottom: 15px;
+    }
+
+    .main-nav {
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .planet-nav-item {
+        min-width: 90px;
+        padding: 8px;
+        font-size: 0.85em;
+    }
+
+    .planet-nav-item img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 5px;
+    }
+
+    main {
+        padding: 20px 15px;
+        margin: 20px auto;
+    }
+
+    .planet-section h2 {
+        font-size: 2em;
+    }
+
+    .planet-info p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 2em;
+    }
+
+    .main-nav {
+        flex-direction: row; /* Keep horizontal for smaller screens, but let it wrap */
+        justify-content: center;
+        padding: 10px 5px;
+        gap: 8px; /* Reduce gap further */
+    }
+
+    .planet-nav-item {
+        min-width: unset; /* Remove min-width to allow more flexibility */
+        width: calc(33% - 10px); /* 3 items per row, with gap */
+        padding: 6px;
+        font-size: 0.8em;
+    }
+
+    .planet-nav-item img {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 4px;
+    }
+
+    main {
+        padding: 15px 10px;
+        margin: 15px auto;
+    }
+
+    .planet-section h2 {
+        font-size: 1.8em;
+    }
+}
